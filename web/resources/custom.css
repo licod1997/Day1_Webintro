@@ -1,0 +1,7 @@
+.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #c8e5bc;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #d43f3a;
+}
