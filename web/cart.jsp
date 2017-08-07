@@ -1,5 +1,7 @@
 <%@ page import="vn.bmag.Product" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %><%--
   Created by IntelliJ IDEA.
   User: Notebook
   Date: 15-Jul-17
@@ -26,23 +28,29 @@
             <th>No.</th>
             <th>Item</th>
             <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
             </thead>
             <tbody>
             <%
-                List<Product> products = (List<Product>) session.getAttribute("cart");
+                Map<Product, Integer> cart = (HashMap<Product, Integer>) session.getAttribute("cart");
                 int i = 0;
-                double totalAmount = 0;
-                if (products != null) {
-                    for (Product product : products) {
+                double totalAmountTest = 0;
+                if (cart != null) {
+                    for (HashMap.Entry<Product, Integer> productTest : cart.entrySet()) {
                         i++;
-                        totalAmount += product.getPrice();
+                        totalAmountTest += productTest.getKey().getPrice();
             %>
             <tr>
                 <td><%=i%>
                 </td>
-                <td><%=product.getName()%>
+                <td><%=productTest.getKey().getName()%>
                 </td>
-                <td><%=(long) product.getPrice()%>
+                <td><%=(long) productTest.getKey().getPrice()%>
+                </td>
+                <td><%=productTest.getValue()%>
+                </td>
+                <td><%=productTest.getValue() * (long) productTest.getKey().getPrice()%>
                 </td>
             </tr>
             <%
@@ -50,7 +58,7 @@
                 }
             %>
             </tbody>
-            <h3>Total Amount: <%=(long) totalAmount%>
+            <h3>Total Amount: <%=(long) totalAmountTest%>
             </h3>
         </table>
     </div>

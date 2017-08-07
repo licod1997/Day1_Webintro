@@ -40,5 +40,6 @@
         </form>
     </div>
 </div>
+<a class="btn btn-default" href="products">< Back to products page</a>
 </body>
 </html>

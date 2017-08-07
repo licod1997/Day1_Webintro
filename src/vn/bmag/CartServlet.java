@@ -22,28 +22,29 @@ public class CartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         HttpSession session = request.getSession(true);
-        List<Product> cart = (List<Product>) session.getAttribute("cart");
-        if (cart == null) {
-            cart = new ArrayList<>();
+        Map<Product, Integer> cart = (HashMap<Product, Integer>) session.getAttribute("cart");
+        if (cart == null){
+            cart = new HashMap<>();
             session.setAttribute("cart", cart);
         }
         ServletContext sc = request.getServletContext();
         List<Product> products = (List<Product>) sc.getAttribute("productsList");
-
         for (Product item : products) {
             if (item.getId() == id) {
-                cart.add(item);
+                if (cart.containsKey(item)){
+                    cart.put(item, cart.get(item) + 1);
+                } else {
+                    cart.put(item, 1);
+                }
                 break;
             }
         }
 
-
-        RequestDispatcher rd = request.getRequestDispatcher("cart.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("products.jsp");
         rd.forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("cart.jsp");
-        rd.forward(request, response);
+        response.sendRedirect("cart.jsp");
     }
 }
