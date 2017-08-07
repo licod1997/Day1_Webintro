@@ -40,7 +40,7 @@
                 </td>
                 <td><%=products.get(i).getName()%>
                 </td>
-                <td><%=products.get(i).getPrice()%>
+                <td><%=(long)products.get(i).getPrice()%>
                 </td>
                 <td>
                     <form action="addToCart" method="post">
@@ -76,6 +76,7 @@
         </form>
     </div>
 </div>
+<a class="btn btn-default pull-right" href="addToCart">Go to cart ></a>
 
 </body>
 </html>
