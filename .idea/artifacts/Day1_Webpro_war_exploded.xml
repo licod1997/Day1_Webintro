@@ -7,6 +7,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="Day1_Webintro" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Spring-4.3.9.RELEASE" />
+        </element>
       </element>
     </root>
   </artifact>

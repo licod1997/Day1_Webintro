@@ -9,18 +9,36 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <script src="resources/jquery/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap-theme.min.css">
+    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="resources/custom.css">
     <title>Edit</title>
 </head>
 <body>
 <%
-    Product product = (Product)request.getAttribute("product");
+    Product product = (Product) request.getAttribute("product");
 %>
-<h1>Edit Product</h1>
-<form action="edit" method="post">
-    <input type="hidden" value="<%=product.getId()%>" name="id"/>
-    Product name: <input type="text" value="" name="productName"/><br/>
-    Product price: <input type="text" value="" name="productPrice"/><br/>
-    <input type="submit" value="Edit"/>
-</form>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Edit Product</h3></div>
+    <div class="panel-body">
+        <form action="edit" method="post" class="form-group">
+            <input type="hidden" value="<%=product.getId()%>" name="id"/>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product name"
+                       name="productName">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Product price</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Product price"
+                       name="productPrice">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>
