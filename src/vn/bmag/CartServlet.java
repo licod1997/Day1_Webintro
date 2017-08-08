@@ -53,7 +53,7 @@ public class CartServlet extends HttpServlet {
                 break;
             }
         }
-        if (type >= 0 && type <= 3){
+        if (type >= 1 && type <= 3){
             response.sendRedirect("cart.jsp");
         } else {
             response.sendRedirect("products.jsp");
