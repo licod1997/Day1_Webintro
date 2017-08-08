@@ -36,10 +36,10 @@
                 <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Product price"
                        name="productPrice">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Edit</button>
         </form>
     </div>
 </div>
-<a class="btn btn-default" href="products">< Back to products page</a>
+<a class="btn btn-default" href="products"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><b> Back to products page</b></a>
 </body>
 </html>

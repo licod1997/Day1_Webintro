@@ -96,6 +96,6 @@
         });
     });
 </script>
-<a class="btn btn-default" href="products"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><b> Back to products page</b></a>
+<a class="btn btn-default" href="products"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><b> Back to products page</b></a>
 </body>
 </html>
