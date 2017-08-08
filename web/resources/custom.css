@@ -1,17 +1,34 @@
+@import "bootstrap";
 .btn-default {
-    text-shadow: none;
-    background-image: none;
-    box-shadow: none;
+    text-shadow: none!important;
+    background-image: none!important;
+    box-shadow: none!important;
 }
 
 .btn-danger {
-    text-shadow: none;
-    background-image: none;
-    box-shadow: none;
+    text-shadow: none!important;
+    background-image: none!important;
+    box-shadow: none!important;
+    border-color: transparent !important;
 }
 
 .btn-primary {
-    text-shadow: none;
-    background-image: none;
-    box-shadow: none;
+    text-shadow: none!important;
+    background-image: none!important;
+    box-shadow: none!important;
+    border-color: transparent !important;
+}
+
+.btn-success {
+    text-shadow: none!important;
+    background-image: none!important;
+    box-shadow: none!important;
+    border-color: transparent !important;
+}
+
+.btn-warning {
+    text-shadow: none!important;
+    background-image: none!important;
+    box-shadow: none!important;
+    border-color: transparent !important;
 }

@@ -50,7 +50,9 @@
                 <td>
                     <form action="addToCart" method="post">
                         <input type="hidden" name="id" value="<%=products.get(i).getId()%>"/>
-                        <input type="submit" class="btn btn-danger" value="Buy"/>
+                        <button type="submit" class="btn btn-danger" style="margin-left: 10px" name="type" value="0">
+                            Buy
+                        </button>
                     </form>
                 </td>
                 <td>

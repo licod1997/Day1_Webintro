@@ -21,9 +21,10 @@ import java.util.Map;
 public class CartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
+        int type = Integer.parseInt(request.getParameter("type"));
         HttpSession session = request.getSession(true);
         Map<Product, Integer> cart = (HashMap<Product, Integer>) session.getAttribute("cart");
-        if (cart == null){
+        if (cart == null) {
             cart = new HashMap<>();
             session.setAttribute("cart", cart);
         }
@@ -31,16 +32,32 @@ public class CartServlet extends HttpServlet {
         List<Product> products = (List<Product>) sc.getAttribute("productsList");
         for (Product item : products) {
             if (item.getId() == id) {
-                if (cart.containsKey(item)){
-                    cart.put(item, cart.get(item) + 1);
-                } else {
-                    cart.put(item, 1);
+                if (type == 0 || type == 1) {
+                    if (cart.containsKey(item)) {
+                        cart.put(item, cart.get(item) + 1);
+                    } else {
+                        cart.put(item, 1);
+                    }
+                } else if (type == 2) {
+                    if (cart.containsKey(item)) {
+                        cart.put(item, cart.get(item) - 1);
+                        if (cart.get(item) <= 0) {
+                            cart.remove(item);
+                        }
+                    }
+                } else if (type == 3) {
+                    if (cart.containsKey(item)) {
+                        cart.remove(item);
+                    }
                 }
                 break;
             }
         }
-
-        response.sendRedirect("products.jsp");
+        if (type == 0) {
+            response.sendRedirect("products.jsp");
+        } else {
+            response.sendRedirect("cart.jsp");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

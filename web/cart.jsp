@@ -1,5 +1,4 @@
 <%@ page import="vn.bmag.Product" %>
-<%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.HashMap" %><%--
   Created by IntelliJ IDEA.
@@ -30,36 +29,53 @@
             <th>Price</th>
             <th>Quantity</th>
             <th>Total</th>
+            <th>Action</th>
             </thead>
             <tbody>
             <%
                 Map<Product, Integer> cart = (HashMap<Product, Integer>) session.getAttribute("cart");
                 int i = 0;
-                double totalAmountTest = 0;
+                double totalAmount = 0;
                 if (cart != null) {
-                    for (Map.Entry<Product, Integer> productTest : cart.entrySet()) {
+                    for (Map.Entry<Product, Integer> product : cart.entrySet()) {
                         i++;
-                        totalAmountTest += productTest.getKey().getPrice();
+                        totalAmount += product.getValue() * product.getKey().getPrice();
             %>
             <tr>
                 <td>
                     <%=i%>
                 </td>
                 <td>
-                    <%=productTest.getKey().getName()%>
+                    <%=product.getKey().getName()%>
                 </td>
                 <td>
                     <span class="currency">
-                        <%= productTest.getKey().getPrice()%>
+                        <%= product.getKey().getPrice()%>
                     </span>&#8363
                 </td>
                 <td>
-                    <%=productTest.getValue()%>
+                    <%=product.getValue()%>
                 </td>
                 <td>
                     <span class="currency">
-                        <%=productTest.getValue() * productTest.getKey().getPrice()%>
+                        <%=product.getValue() * product.getKey().getPrice()%>
                     </span>&#8363
+                </td>
+                <td>
+                    <div class="btn-toolbar" role="toolbar">
+                        <form action="addToCart" method="post">
+                            <input type="hidden" name="id" value="<%=product.getKey().getId()%>"/>
+                            <button type="submit" class="btn btn-success" style="margin-left: 10px" name="type" value="1">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            </button>
+                            <button type="submit" class="btn btn-warning" style="margin-left: 10px" name="type" value="2">
+                                <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                            </button>
+                            <button type="submit" class="btn btn-danger" style="margin-left: 10px" name="type" value="3">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                        </form>
+                    </div>
                 </td>
             </tr>
             <%
@@ -68,7 +84,7 @@
             %>
             </tbody>
             <h3>
-                Total Amount: <span class="currency"><%= totalAmountTest%></span>&#8363
+                Total Amount: <span class="currency"><%= totalAmount%></span>&#8363
             </h3>
         </table>
     </div>

@@ -32,7 +32,6 @@ public class ProductServlet extends HttpServlet {
             }};
             sc.setAttribute("productsList", products);
         }
-        RequestDispatcher rd = request.getRequestDispatcher("products.jsp");
-        rd.forward(request, response);
+        response.sendRedirect("products.jsp");
     }
 }
