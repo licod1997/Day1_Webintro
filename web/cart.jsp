@@ -49,17 +49,17 @@
                     <%=productTest.getKey().getName()%>
                 </td>
                 <td>
-                    <div class="currency">
+                    <span class="currency">
                         <%= productTest.getKey().getPrice()%>
-                    </div>
+                    </span>&#8363
                 </td>
                 <td>
                     <%=productTest.getValue()%>
                 </td>
                 <td>
-                    <div class="currency">
+                    <span class="currency">
                         <%=productTest.getValue() * productTest.getKey().getPrice()%>
-                    </div>
+                    </span>&#8363
                 </td>
             </tr>
             <%
@@ -68,14 +68,14 @@
             %>
             </tbody>
             <h3>
-                Total Amount: <div class="currency"><%= totalAmountTest%></div>
+                Total Amount: <span class="currency"><%= totalAmountTest%></span>&#8363
             </h3>
         </table>
     </div>
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
-        $.each($("div.currency"), function (key, value) {
+        $.each($("span.currency"), function (key, value) {
             value.innerHTML = parseFloat(value.innerHTML).toLocaleString();
         });
     });

@@ -36,11 +36,16 @@
                 for (int i = 0; i < products.size(); i++) {
             %>
             <tr>
-                <td><%=i + 1%>
+                <td>
+                    <%=i + 1%>
                 </td>
-                <td><%=products.get(i).getName()%>
+                <td>
+                    <%=products.get(i).getName()%>
                 </td>
-                <td><%=(long)products.get(i).getPrice()%>
+                <td>
+                    <span class="currency">
+                        <%=products.get(i).getPrice()%>
+                    </span>&#8363
                 </td>
                 <td>
                     <form action="addToCart" method="post">
@@ -59,6 +64,13 @@
         </table>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.each($("span.currency"), function (key, value) {
+            value.innerHTML = parseFloat(value.innerHTML).toLocaleString();
+        });
+    });
+</script>
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">New Product</h3></div>
@@ -66,11 +78,13 @@
         <form action="add" method="post" class="form-group">
             <div class="form-group">
                 <label for="exampleInputEmail1">Product name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product name" name="productName">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product name"
+                       name="productName">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Product price</label>
-                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Product price" name="productPrice">
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Product price"
+                       name="productPrice">
             </div>
             <button type="submit" class="btn btn-primary">Add</button>
         </form>

@@ -43,9 +43,9 @@
                     <%=products.get(i).getName()%>
                 </td>
                 <td>
-                    <div class="currency">
+                    <span class="currency">
                         <%=products.get(i).getPrice()%>
-                    </div>
+                    </span>&#8363
                 </td>
                 <td>
                     <form action="addToCart" method="post">
@@ -66,7 +66,7 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
-        $.each($("div.currency"), function (key, value) {
+        $.each($("span.currency"), function (key, value) {
             value.innerHTML = parseFloat(value.innerHTML).toLocaleString();
         });
     });
