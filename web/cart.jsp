@@ -37,7 +37,7 @@
                 int i = 0;
                 double totalAmountTest = 0;
                 if (cart != null) {
-                    for (HashMap.Entry<Product, Integer> productTest : cart.entrySet()) {
+                    for (Map.Entry<Product, Integer> productTest : cart.entrySet()) {
                         i++;
                         totalAmountTest += productTest.getKey().getPrice();
             %>

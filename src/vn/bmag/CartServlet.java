@@ -40,8 +40,7 @@ public class CartServlet extends HttpServlet {
             }
         }
 
-        RequestDispatcher rd = request.getRequestDispatcher("products.jsp");
-        rd.forward(request, response);
+        response.sendRedirect("products.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
