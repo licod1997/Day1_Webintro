@@ -6,15 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d45164f-9e92-421a-bf7c-b402d7a89821" name="Default" comment="update jQuery and HTML for proper layout">
+    <list default="true" id="6d45164f-9e92-421a-bf7c-b402d7a89821" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Day1_Webpro_war_exploded/cart.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Day1_Webpro_war_exploded/cart.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Day1_Webpro_war_exploded/resources/custom.css" afterPath="$PROJECT_DIR$/out/artifacts/Day1_Webpro_war_exploded/resources/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vn/bmag/CartServlet.java" afterPath="$PROJECT_DIR$/src/vn/bmag/CartServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vn/bmag/ProductServlet.java" afterPath="$PROJECT_DIR$/src/vn/bmag/ProductServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/cart.jsp" afterPath="$PROJECT_DIR$/web/cart.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/products.jsp" afterPath="$PROJECT_DIR$/web/products.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/custom.css" afterPath="$PROJECT_DIR$/web/resources/custom.css" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -752,7 +747,7 @@
       <workItem from="1501940165830" duration="46000" />
       <workItem from="1501940277041" duration="42000" />
       <workItem from="1502121581991" duration="8869000" />
-      <workItem from="1502167561315" duration="12439000" />
+      <workItem from="1502167561315" duration="12510000" />
     </task>
     <task id="LOCAL-00001" summary="change layout by using bootstrap">
       <created>1502124678917</created>
@@ -796,11 +791,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502175127487</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add add, reduce, remove action in Cart.jsp">
+      <created>1502180762595</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1502180762595</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43614000" />
+    <option name="totallyTimeSpent" value="43685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -855,7 +857,8 @@
     <MESSAGE value="override Product hashCode so Map on CartServlet can work probably" />
     <MESSAGE value="use jQuery to format currency" />
     <MESSAGE value="update jQuery and HTML for proper layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="update jQuery and HTML for proper layout" />
+    <MESSAGE value="add add, reduce, remove action in Cart.jsp" />
+    <option name="LAST_COMMIT_MESSAGE" value="add add, reduce, remove action in Cart.jsp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
