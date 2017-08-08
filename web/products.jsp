@@ -92,7 +92,6 @@
         </form>
     </div>
 </div>
-<a class="btn btn-default pull-right" href="addToCart">Go to cart ></a>
-
+<a class="btn btn-default pull-right" href="addToCart"><b>Go to cart </b><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
 </body>
 </html>
