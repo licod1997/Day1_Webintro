@@ -42,15 +42,24 @@
                         totalAmountTest += productTest.getKey().getPrice();
             %>
             <tr>
-                <td><%=i%>
+                <td>
+                    <%=i%>
                 </td>
-                <td><%=productTest.getKey().getName()%>
+                <td>
+                    <%=productTest.getKey().getName()%>
                 </td>
-                <td><%=(long) productTest.getKey().getPrice()%>
+                <td>
+                    <div class="currency">
+                        <%= productTest.getKey().getPrice()%>
+                    </div>
                 </td>
-                <td><%=productTest.getValue()%>
+                <td>
+                    <%=productTest.getValue()%>
                 </td>
-                <td><%=productTest.getValue() * (long) productTest.getKey().getPrice()%>
+                <td>
+                    <div class="currency">
+                        <%=productTest.getValue() * productTest.getKey().getPrice()%>
+                    </div>
                 </td>
             </tr>
             <%
@@ -58,11 +67,19 @@
                 }
             %>
             </tbody>
-            <h3>Total Amount: <%=(long) totalAmountTest%>
+            <h3>
+                Total Amount: <div class="currency"><%= totalAmountTest%></div>
             </h3>
         </table>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.each($("div.currency"), function (key, value) {
+            value.innerHTML = parseFloat(value.innerHTML).toLocaleString();
+        });
+    });
+</script>
 <a class="btn btn-default" href="products">< Back to products page</a>
 </body>
 </html>
